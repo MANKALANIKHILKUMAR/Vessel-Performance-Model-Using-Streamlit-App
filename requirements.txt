@@ -2,8 +2,4 @@ streamlit
 numpy
 pandas
 scikit-learn
-altair
-requests
-matplotlib
-plotly
-seaborn
+pickle-mixin

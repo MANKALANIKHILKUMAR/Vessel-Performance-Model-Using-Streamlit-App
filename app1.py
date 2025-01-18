@@ -3,6 +3,12 @@ import pickle
 import numpy as np
 import requests
 import io
+from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet, BayesianRidge, SGDRegressor
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, AdaBoostRegressor
+from sklearn.svm import SVR
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.neural_network import MLPRegressor
 
 MODEL_PATHS = {
     "Gradient Boosting": "https://github.com/MANKALANIKHILKUMAR/Vessel-Performance-Model-Using-Streamlit-App/raw/refs/heads/main/Gradient%20Boosting_nautical_mile_final.pkl",

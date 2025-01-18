@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 import requests
 import io
-from sklearn.linear_model import LinearRegression,BayesianRidge, SGDRegressor
+from sklearn.linear_model import LinearRegression,BayesianRidge
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, AdaBoostRegressor
 from sklearn.neighbors import KNeighborsRegressor
@@ -18,13 +18,12 @@ MODEL_PATHS = {
     "Linear Regression":"https://github.com/MANKALANIKHILKUMAR/Vessel-Performance-Model-Using-Streamlit-App/raw/refs/heads/main/Linear%20Regression_nautical_mile_final.pkl",
     "Bayesian Ridge":"https://github.com/MANKALANIKHILKUMAR/Vessel-Performance-Model-Using-Streamlit-App/raw/refs/heads/main/Bayesian%20Ridge_nautical_mile_final.pkl",
     "Multi-layer Perceptron":"https://github.com/MANKALANIKHILKUMAR/Vessel-Performance-Model-Using-Streamlit-App/raw/refs/heads/main/Multi-layer%20Perceptron_nautical_mile_final.pkl",
-    "Stochastic Gradient Descent":"https://github.com/MANKALANIKHILKUMAR/Vessel-Performance-Model-Using-Streamlit-App/raw/refs/heads/main/Stochastic%20Gradient%20Descent_nautical_mile_final.pkl"
+  
     
 }
 
 models = {
     "Linear Regression": LinearRegression(),
-    "Stochastic Gradient Descent": SGDRegressor(),
     "Decision Tree": DecisionTreeRegressor(),
     "Random Forest": RandomForestRegressor(),
     "Gradient Boosting": GradientBoostingRegressor(),

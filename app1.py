@@ -3,10 +3,9 @@ import pickle
 import numpy as np
 import requests
 import io
-from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet, BayesianRidge, SGDRegressor
+from sklearn.linear_model import LinearRegression,BayesianRidge, SGDRegressor
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, AdaBoostRegressor
-from sklearn.svm import SVR
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.neural_network import MLPRegressor
 
@@ -23,6 +22,17 @@ MODEL_PATHS = {
     
 }
 
+models = {
+    "Linear Regression": LinearRegression(),
+    "Stochastic Gradient Descent": SGDRegressor(),
+    "Decision Tree": DecisionTreeRegressor(),
+    "Random Forest": RandomForestRegressor(),
+    "Gradient Boosting": GradientBoostingRegressor(),
+    "AdaBoost": AdaBoostRegressor(),
+    "Bayesian Ridge": BayesianRidge(),
+    "K-Nearest Neighbors": KNeighborsRegressor(),
+    "Multi-layer Perceptron": MLPRegressor(),
+}
 
 def load_models():
     models = {}

@@ -149,23 +149,38 @@ if models:
     saileddistance = st.sidebar.number_input("Sailed Distance:", format="%.2f")
 
     # Prediction button
+    
     if st.sidebar.button("Predict"):
-        fuel_per_nautical_mile, total_consumption = estimate_fuel_consumption(
-            model_name, airpressure, consumption, totalcylinderoilconsumption, totalcylinderoilspecificconsumption, saileddistance, models
-        )
-
+      fuel_per_nautical_mile, total_consumption = estimate_fuel_consumption(
+        model_name, airpressure, consumption, totalcylinderoilconsumption, totalcylinderoilspecificconsumption, saileddistance, models)
+    
         if fuel_per_nautical_mile is not None:
-            # Display prediction results
             st.markdown("""
             <div style="text-align: center; background-color: #ffffff; padding: 10px; border-radius: 10px;">
-                <h2 style="color: red;">Prediction Results</h2>
+                <h2 style="color: orange;">Prediction Results</h2>
             </div>
             """, unsafe_allow_html=True)
-
-            st.write(f"**Fuel Per Nautical Mile ({model_name}):** {fuel_per_nautical_mile:.2f}")
-            st.write(f"**Total Consumption ({model_name}):** {total_consumption:.2f}")
+    
+            st.markdown(f"""
+            <div style="
+                border: 2px solid #ff4500;
+                border-radius: 15px; 
+                background-color: #add8e6; 
+                padding: 20px; 
+                margin: 20px auto; 
+                width: 80%; 
+                text-align: center;">
+                <h3 style="color: red; margin-bottom: 10px;">Fuel Per Nautical Mile ({model_name}):</h3>
+                <p style="font-size: 20px; font-weight: bold; color: #ff4500;">{fuel_per_nautical_mile:.2f}</p>
+                <h3 style="color: red; margin-top: 10px;">Total Consumption ({model_name}):</h3>
+                <p style="font-size: 20px; font-weight: bold; color: #ff4500;">{total_consumption:.2f}</p>
+            </div>
+            """, unsafe_allow_html=True)
         else:
+            
             st.error("Unable to make predictions. Please check the inputs or model.")
+
+    
 
 
            

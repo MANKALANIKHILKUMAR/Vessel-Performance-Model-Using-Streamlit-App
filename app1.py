@@ -149,18 +149,22 @@ if models:
     saileddistance = st.sidebar.number_input("Sailed Distance:", format="%.2f")
 
     # Prediction button
-    
+    # Prediction button
     if st.sidebar.button("Predict"):
-      fuel_per_nautical_mile, total_consumption = estimate_fuel_consumption(
-        model_name, airpressure, consumption, totalcylinderoilconsumption, totalcylinderoilspecificconsumption, saileddistance, models)
+        # Call the prediction function with the selected model and input parameters
+        fuel_per_nautical_mile, total_consumption = estimate_fuel_consumption(
+            model_name, airpressure, consumption, totalcylinderoilconsumption, totalcylinderoilspecificconsumption, saileddistance, models
+        )
     
         if fuel_per_nautical_mile is not None:
+            # Display prediction results with enhanced styling
             st.markdown("""
             <div style="text-align: center; background-color: #ffffff; padding: 10px; border-radius: 10px;">
                 <h2 style="color: orange;">Prediction Results</h2>
             </div>
             """, unsafe_allow_html=True)
     
+            # Styled results in a circular rectangular box
             st.markdown(f"""
             <div style="
                 border: 2px solid #ff4500;
@@ -177,8 +181,10 @@ if models:
             </div>
             """, unsafe_allow_html=True)
         else:
-            
+            # Error message if predictions could not be made
             st.error("Unable to make predictions. Please check the inputs or model.")
+
+  
 
     
 
